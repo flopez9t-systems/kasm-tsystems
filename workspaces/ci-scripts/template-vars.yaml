@@ -1,0 +1,15 @@
+files: &UNIVERSAL_CHANGE_FILES
+  - src/common/**
+  - ci-scripts/**
+  - .gitlab-ci.yml
+
+multiImages:
+  - name: chromium
+    singleapp: true
+    base: core-ubuntu-focal
+    dockerfile: dockerfile-kasm-chromium
+    changeFiles:
+      - dockerfile-kasm-chromium
+      - src/ubuntu/install/gtk/**
+      - src/ubuntu/install/chromium/**
+      - src/ubuntu/install/certificates/**
